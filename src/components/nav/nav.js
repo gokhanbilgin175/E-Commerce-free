@@ -31,9 +31,9 @@ const Nav = () => {
             <div className="logo">
                 <img src="./img/logo.svg" alt="" />
             </div>
-            <div className="search-box">
-                <input type="text" value="" placeholder="Enter The Product Name" autoComplete="off" />
-                <button className="search">Search</button>
+            <div className="search_box">
+                <input className="input" type="text" value="" placeholder="Enter The Product Name" autoComplete="off" />
+                <button className="button">Search</button>
             </div>
             <div className="icon">
                 {
@@ -44,6 +44,7 @@ const Nav = () => {
                         <AiOutlineUser />
                         </div>
                 <p>Hello, {user.name} </p>
+                
                     </div>
                     )
                 }
