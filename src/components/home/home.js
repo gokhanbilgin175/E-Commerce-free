@@ -11,13 +11,40 @@ import { AiOutlineShoppingCart, AiOutlineCloseCircle } from 'react-icons/ai';
 import { BsEye } from 'react-icons/bs';
 import { AiOutlineHeart } from 'react-icons/ai';
 
-const Home = () => {
+const Home = ({detail,close ,setClose,view}) => {
 
   const [homeProduct, setHomeProduct] = useState(HomeProduct)
 
 
   return (
     <>
+     {
+      close ?  <div className="product_detail">
+      <div className="container">
+        <button className='closebtn' onClick={()=>setClose(false)}><AiOutlineCloseCircle/></button>
+      
+           {detail.map((item)=>
+           {
+           return <div className="productbox">
+            <div className="img-box">
+              <img src={item.Img} alt={item.Title} />
+            </div>
+            <div className="detail">
+              <h4>{item.Cat}</h4>
+              <h2>{item.Title}</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, rem?</p>
+              <h3>{item.Price}</h3>
+              <button>Add To Card</button>
+            </div>
+             </div>
+           }
+           
+           )}
+       
+      </div>
+    </div>
+    : null
+    }
     <div className="top_banner">
         <div className="container">
             <div className="detail">
@@ -116,7 +143,7 @@ const Home = () => {
                   <img src={item.Img} alt={item.Title} />
                   <div className="icon">
                     <li><AiOutlineShoppingCart /></li>
-                    <li><BsEye /></li>
+                    <li onClick={()=>view(item)}><BsEye /></li>
                 <li><AiOutlineHeart /></li>  
                   
                   

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./nav.css";
 import { FaTruckMoving } from "react-icons/fa";
 import { AiOutlineHeart } from 'react-icons/ai';
@@ -8,10 +8,11 @@ import { Link } from "react-router-dom";
 import { CiLogin } from 'react-icons/ci';
 import { CiLogout } from 'react-icons/ci';
 import { useAuth0 } from "@auth0/auth0-react";
-const Nav = () => {
+const Nav = ({searchBtn}) => {
 
     const { loginWithRedirect,logout,user, isAuthenticated } = useAuth0();
-
+    const [search, setSearch] = useState("")
+    console.log(search);
 
   return (
 
@@ -32,8 +33,8 @@ const Nav = () => {
                 <img src="./img/logo.svg" alt="" />
             </div>
             <div className="search_box">
-                <input className="input" type="text" value="" placeholder="Enter The Product Name" autoComplete="off" />
-                <button className="button">Search</button>
+                <input className="input" type="text" onChange={(e)=> setSearch(e.target.value)} value={search} placeholder="Enter The Product Name" autoComplete="off" />
+                <button onClick={()=>searchBtn(search)} className="button">Search</button>
             </div>
             <div className="icon">
                 {
@@ -51,7 +52,7 @@ const Nav = () => {
               
                 <div className="second_icon">
                <Link to="/" className="link"><AiOutlineHeart /></Link> 
-           <Link to="/cart" className="link"><BsBagCheck /></Link> 
+           <Link to="/card" className="link"><BsBagCheck /></Link> 
                 </div>
           
             </div>
