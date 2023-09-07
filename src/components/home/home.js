@@ -11,7 +11,7 @@ import { AiOutlineShoppingCart, AiOutlineCloseCircle } from 'react-icons/ai';
 import { BsEye } from 'react-icons/bs';
 import { AiOutlineHeart } from 'react-icons/ai';
 
-const Home = ({detail,close ,setClose,view}) => {
+const Home = ({detail,close ,setClose,view,addToCard}) => {
 
   const [homeProduct, setHomeProduct] = useState(HomeProduct)
 
@@ -142,7 +142,7 @@ const Home = ({detail,close ,setClose,view}) => {
                 <div className="img_box">
                   <img src={item.Img} alt={item.Title} />
                   <div className="icon">
-                    <li><AiOutlineShoppingCart /></li>
+                    <li onClick={()=> addToCard(item)}><AiOutlineShoppingCart /></li>
                     <li onClick={()=>view(item)}><BsEye /></li>
                 <li><AiOutlineHeart /></li>  
                   

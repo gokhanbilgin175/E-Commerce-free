@@ -11,7 +11,7 @@ const Rout = ({product,setProduct,detail,view,close,setClose,card,setCard,addToC
   return (
     <>
     <Routes>
-        <Route path="/" element={<Home detail={detail}  view={view} close={close} setClose={setClose}/>}/>
+        <Route path="/" element={<Home detail={detail} addToCard={addToCard}  view={view} close={close} setClose={setClose}/>}/>
         <Route path="product" element={<Product addToCard={addToCard} product={product} view={view}  setProduct={setProduct} detail={detail} close={close} setClose={setClose} />}/>
         <Route path="about" element={<About/>}/>
         <Route path="card" element={<Card  card={card} setCard={setCard} />}/>

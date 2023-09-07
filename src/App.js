@@ -53,7 +53,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Nav searchBtn={searchBtn}/>
-     <Rout addToCard={addToCard} detail={detail} card={card} setCard={setCard} view={view} product={product} setProduct={setProduct} close={close} setClose={setClose}/>
+     <Rout  addToCard={addToCard} detail={detail} card={card} setCard={setCard} view={view} product={product} setProduct={setProduct} close={close} setClose={setClose}/>
      <Footer/>
     </BrowserRouter>
   )

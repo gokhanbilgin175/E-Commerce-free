@@ -1,17 +1,18 @@
-cart.css
+
 *
 {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
+    
 }
 .cartcontainer
 {
     padding: 40px 50px;
     width: 100%;
     background: #f1f1f1;
-    border-bottom: 1px solid #9a9a9a;
+  
 }
 .cartcontainer .emptycart
 {
@@ -38,6 +39,8 @@ cart.css
 {
     max-width: 100%;
     padding: 20px 30px;
+
+
 }
 .cartcontainer .contant .cart_item
 {
