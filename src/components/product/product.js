@@ -5,8 +5,10 @@ import { BsEye } from 'react-icons/bs';
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { AiOutlineHeart } from 'react-icons/ai'
 import {  AiOutlineCloseCircle } from 'react-icons/ai';
+import { useAuth0 } from "@auth0/auth0-react";
+
 const Product = ({product, setProduct,detail,view,close,setClose,addToCard}) => {
-  
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   const filterProduct = (val) => { 
 
@@ -82,7 +84,11 @@ const Product = ({product, setProduct,detail,view,close,setClose,addToCard}) => 
                 <div className="img_box">
                   <img src={item.Img} alt={item.Title} />
                   <div className="icon">
-                    <li onClick={()=> addToCard(item)}><AiOutlineShoppingCart /></li>
+                    {
+                      isAuthenticated ?  <li onClick={()=> addToCard(item)}><AiOutlineShoppingCart /></li>
+                       : <li onClick={()=> loginWithRedirect()}><AiOutlineShoppingCart /></li>
+                    }
+                   
                     <li onClick={()=> view(item)} ><BsEye /></li>
                 <li><AiOutlineHeart /></li>  
                   

@@ -34,8 +34,6 @@ product.css
 .products .container .filter
 {
     padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
 }
 .products .container .filter .categories h3
 {
@@ -47,7 +45,6 @@ product.css
 .products .container .filter .categories ul 
 {
     margin-top: 10px;
-    text-align: center;
 }
 .products .container .filter .categories ul li
 {
@@ -55,16 +52,10 @@ product.css
     margin-top: 20px;
     color: #010f1c;
     cursor: pointer;
-    
-}
-.products .container .filter .categories ul li:hover{
-color: rgb(150, 150, 228);
-transform: scale(1.5);
 }
 .products .container .productbox
 {
     margin-right: 0%;
-    margin-left: 10%;
 }
 .products .container .productbox .contant
 {
@@ -159,15 +150,15 @@ transform: scale(1.5);
     padding: 30px 40px;
     width: 100%;
     height: 120%;
-    position: fixed;
+     position: fixed;
     z-index: 2;
-    margin-top: -20%;
-    background: rgba(0, 0, 0, 0.24);
+     margin-top: -20%;
+    background: rgba(0, 0, 0, 0.24); 
 }
 .product_detail .container
 {
-    margin-top: 7%;
-    margin-left: 8%;
+    margin-top: 20%;
+    margin-left: 5%;
     width: 1000px;
     height: 550px;
     background: #fff;
